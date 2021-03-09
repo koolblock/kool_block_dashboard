@@ -60,9 +60,11 @@ module.exports = {
   keystone,
   apps: [
     new GraphQLApp(),
+    new NextApp({ dir: "app" }),
     new AdminUIApp({
       name: PROJECT_NAME,
       enableDefaultRoute: true,
+      adminPath: "/admin",
       authStrategy,
       isAccessAllowed: isAdmin,
     }),
