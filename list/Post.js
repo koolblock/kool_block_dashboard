@@ -1,4 +1,5 @@
 const { Text, Select, Relationship } = require("@keystonejs/fields");
+const { Wysiwyg } = require("@keystonejs/fields-wysiwyg-tinymce");
 
 const postFields = {
   fields: {
@@ -7,7 +8,7 @@ const postFields = {
       isRequired: true,
     },
     body: {
-      type: Text,
+      type: Wysiwyg,
       isMultiline: true,
     },
     status: {

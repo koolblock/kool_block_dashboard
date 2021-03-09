@@ -22,6 +22,7 @@
     "@keystonejs/app-graphql": "^6.2.0",
     "@keystonejs/app-next": "^6.0.0",
     "@keystonejs/auth-password": "^6.0.1",
+    "@keystonejs/fields-wysiwyg-tinymce": "^5.4.0",
     "@keystonejs/keystone": "^19.0.0",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
