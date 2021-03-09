@@ -1,3 +1,5 @@
 /node_modules
 .env
 app/.next
+app/.next/*.js
+app/.next/*.json
