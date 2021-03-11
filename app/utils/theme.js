@@ -6,6 +6,8 @@ const theme = createMuiTheme({
   palette: {
     primary: indigo,
     secondary: pink,
+    green: "#84BC04",
+    black_koolblock: "#1C1C1C",
   },
 });
 
