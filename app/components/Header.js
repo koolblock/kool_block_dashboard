@@ -1,77 +1,171 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  makeStyles,
+  Button,
+  IconButton,
+  Drawer,
+  Link,
+  MenuItem,
+  Box,
+} from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+
+const headersData = [
+  {
+    label: "Listings",
+    href: "/listings",
+  },
+  {
+    label: "Mentors",
+    href: "/mentors",
+  },
+  {
+    label: "My Account",
+    href: "/account",
+  },
+  {
+    label: "Log Out",
+    href: "/logout",
+  },
+];
 
 const useStyles = makeStyles((theme) => ({
+  header: {
+    height: "30vh",
+    backgroundColor: theme.palette.black,
+    paddingRight: theme.spacing(10),
+    paddingLeft: theme.spacing(20),
+    "@media (max-width: 900px)": {
+      paddingLeft: 0,
+    },
+    color: theme.palette.primary[200],
+  },
+  logo: {
+    fontWeight: 600,
+    color: "#FFFEFE",
+    textAlign: "left",
+  },
+  menuButton: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 700,
+    size: theme.spacing(3),
+    marginLeft: theme.spacing(5),
+  },
   toolbar: {
-    borderBottom: `1px solid black`,
-  },
-  toolbarTitle: {
-    flex: 1,
-  },
-  toolbarSecondary: {
+    display: "flex",
     justifyContent: "space-between",
-    overflowX: "auto",
+    marginTop: theme.spacing(2),
   },
-  toolbarLink: {
-    padding: theme.spacing(1),
-    flexShrink: 0,
+  drawerContainer: {
+    padding: "20px 30px",
   },
 }));
 
-export default function Header(props) {
-  const classes = useStyles();
-  const { sections, title } = props;
+export default function Header() {
+  const { header, menuButton, toolbar, drawerContainer } = useStyles();
+
+  const [state, setState] = useState({
+    mobileView: false,
+    drawerOpen: false,
+  });
+
+  const { mobileView, drawerOpen } = state;
+
+  useEffect(() => {
+    const setResponsiveness = () => {
+      return window.innerWidth < 900
+        ? setState((prevState) => ({ ...prevState, mobileView: true }))
+        : setState((prevState) => ({ ...prevState, mobileView: false }));
+    };
+
+    setResponsiveness();
+
+    window.addEventListener("resize", () => setResponsiveness());
+  }, []);
+
+  const displayDesktop = () => {
+    return (
+      <Toolbar className={toolbar}>
+        {kool_block_logo}
+        <div>{getMenuButtons()}</div>
+      </Toolbar>
+    );
+  };
+
+  const displayMobile = () => {
+    const handleDrawerOpen = () =>
+      setState((prevState) => ({ ...prevState, drawerOpen: true }));
+    const handleDrawerClose = () =>
+      setState((prevState) => ({ ...prevState, drawerOpen: false }));
+
+    return (
+      <Toolbar className={toolbar}>
+        <Box>
+          <IconButton
+            {...{
+              edge: "start",
+              color: "inherit",
+              "aria-label": "menu",
+              "aria-haspopup": "true",
+              onClick: handleDrawerOpen,
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          <Drawer
+            {...{
+              anchor: "left",
+              open: drawerOpen,
+              onClose: handleDrawerClose,
+            }}
+          >
+            <div className={drawerContainer}>{getDrawerChoices()}</div>
+          </Drawer>
+        </Box>
+        <Box>{kool_block_logo}</Box>
+      </Toolbar>
+    );
+  };
+
+  const getDrawerChoices = () => {
+    return headersData.map(({ label, href }) => (
+      <Link href={href} key={label}>
+        <MenuItem>{label}</MenuItem>
+      </Link>
+    ));
+  };
+
+  const kool_block_logo = (
+    <Link href="/">
+      <Image src="/koolblock.png" alt="logo" width={180} height={80}></Image>
+    </Link>
+  );
+
+  const getMenuButtons = () => {
+    return headersData.map(({ label, href }) => (
+      <Link
+        href={href}
+        key={label}
+        {...{
+          color: "inherit",
+          className: menuButton,
+        }}
+      >
+        {label}
+      </Link>
+    ));
+  };
 
   return (
-    <React.Fragment>
-      <Toolbar className={classes.toolbar}>
-        <Button size="small">Subscribe</Button>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          className={classes.toolbarTitle}
-        >
-          {title}
-        </Typography>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
-      </Toolbar>
-      <Toolbar
-        component="nav"
-        variant="dense"
-        className={classes.toolbarSecondary}
-      >
-        {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-          >
-            {section.title}
-          </Link>
-        ))}
-      </Toolbar>
-    </React.Fragment>
+    <header>
+      <AppBar className={header}>
+        {mobileView ? displayMobile() : displayDesktop()}
+      </AppBar>
+    </header>
   );
 }
-
-Header.propTypes = {
-  sections: PropTypes.array,
-  title: PropTypes.string,
-};

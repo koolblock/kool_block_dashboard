@@ -1,11 +1,12 @@
-import indigo from "@material-ui/core/colors/indigo";
-import pink from "@material-ui/core/colors/pink";
+import { grey, indigo } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   palette: {
-    primary: indigo,
-    secondary: pink,
+    primary: grey,
+    secondary: indigo,
+    green: "#84BC04",
+    black: "#1C1C1C",
   },
 });
 

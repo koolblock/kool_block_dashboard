@@ -5,10 +5,7 @@ import Header from "../components/Header";
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
-      <Header
-        title="KoolBlock"
-        sections={[{ title: "Our Work", url: "/about_us" }]}
-      />
+      <Header />
       <Component {...pageProps} />
     </ThemeProvider>
   );
