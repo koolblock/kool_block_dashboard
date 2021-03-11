@@ -35,8 +35,9 @@ const headersData = [
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    height: "30vh",
-    backgroundColor: theme.palette.black,
+    height: "max-content",
+    paddingBottom: theme.spacing(1),
+    backgroundColor: theme.palette.black_koolblock,
     paddingRight: theme.spacing(10),
     paddingLeft: theme.spacing(20),
     "@media (max-width: 900px)": {
@@ -127,7 +128,9 @@ export default function Header() {
             <div className={drawerContainer}>{getDrawerChoices()}</div>
           </Drawer>
         </Box>
-        <Box>{kool_block_logo}</Box>
+        <Box style={{ width: "100%", textAlign: "center" }}>
+          {kool_block_logo}
+        </Box>
       </Toolbar>
     );
   };
