@@ -54,7 +54,12 @@ function ContactUs(props) {
     <>
       <SubHeader title="Contact Us" />
 
-      <Box className={classes.container} display="flex" flexDirection="column">
+      <Box
+        className={classes.container}
+        display="flex"
+        flexDirection="column"
+        pb={10}
+      >
         <Block>
           <Box display="flex" justifyContent="center">
             <form>
@@ -102,7 +107,7 @@ function ContactUs(props) {
                     variant="outlined"
                   />
                 </CardContent>
-                <Box display="flex" justifyContent="center">
+                <Box display="flex" justifyContent="center" mb={2}>
                   <Button size="large" variant="contained" color="secondary">
                     Send
                   </Button>
