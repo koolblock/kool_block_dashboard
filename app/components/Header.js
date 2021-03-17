@@ -28,8 +28,8 @@ const headersData = [
     href: "/account",
   },
   {
-    label: "Log Out",
-    href: "/logout",
+    label: "Contact Us",
+    href: "/contact_us",
   },
 ];
 
