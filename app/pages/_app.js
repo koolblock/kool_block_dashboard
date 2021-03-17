@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <Box mt={10} />
+      <Box mt={13} />
       <Component {...pageProps} />
     </ThemeProvider>
   );
