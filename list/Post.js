@@ -7,6 +7,10 @@ const postFields = {
       type: Text,
       isRequired: true,
     },
+    subtitle: {
+      type: Text,
+      isRequired: true,
+    },
     body: {
       type: Wysiwyg,
       isMultiline: true,

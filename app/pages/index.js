@@ -4,6 +4,7 @@ import Block from "../components/Block";
 import { Box } from "@material-ui/core";
 import Introduction from "../sections/Introduction";
 import IntroductionTwo from "../sections/IntroductionTwo";
+import PostsList from "../sections/PostsList";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -19,6 +20,9 @@ function HomePage(props) {
       </Block>
       <Block background="black">
         <IntroductionTwo />
+      </Block>
+      <Block background="green">
+        <PostsList />
       </Block>
     </Box>
   );
