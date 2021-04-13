@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     height: "max-content",
     minHeight: "70vh",
     fontFamily: "Roboto",
+    boxSizing: 'border-box'
   },
 }));
 
@@ -25,7 +26,13 @@ export default function Block({ children, background = false }) {
   const background_color = background ? getBackground(background) : "white";
 
   return (
-    <Box className={classes.container} style={{ background: background_color }}>
+    <Box
+      className={classes.container}
+      style={{
+        borderBottom: `25px solid ${background_color}`,
+        borderRight: `35px solid ${background_color}`,
+      }}
+    >
       {children}
     </Box>
   );

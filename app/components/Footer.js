@@ -1,9 +1,19 @@
 import React from "react";
 import Link from "next/link";
+import { makeStyles, Card, Box, Typography } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    background: theme.palette.black_koolblock,
+  },
+}));
+
 
 export default function Footer() {
+      const classes = useStyles();
+
   return (
-    <footer className="footer-distributed">
+    <footer className={`footer-distributed ${classes.root}`}>
       <div className="footer-left">
         <h3>
           Kool<span>Block</span>

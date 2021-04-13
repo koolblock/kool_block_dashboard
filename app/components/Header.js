@@ -16,18 +16,6 @@ import Image from "next/image";
 
 const headersData = [
   {
-    label: "Listings",
-    href: "/listings",
-  },
-  {
-    label: "Mentors",
-    href: "/mentors",
-  },
-  {
-    label: "My Account",
-    href: "/account",
-  },
-  {
     label: "Contact Us",
     href: "/contact_us",
   },

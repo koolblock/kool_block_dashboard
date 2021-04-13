@@ -1,12 +1,20 @@
 import { Box, Grid } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  List,
+  ListItem,
+} from "@material-ui/core";
 import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     width: "100%",
     height: "100%",
+    margin: 15
   },
+  image:{
+    borderRadius: 2
+  }
 }));
 
 export default function Introduction() {
@@ -22,6 +30,7 @@ export default function Introduction() {
       <Grid item xs={12} md={6}>
         <Box display="flex" justifyContent="center">
           <Image
+            className={classes.image}
             src={"/washhands.jpeg"}
             alt="logo"
             width={500}
@@ -40,19 +49,37 @@ export default function Introduction() {
         >
           KOOLBLOCK
         </Box>
-        <Box mb={1} fontWeight="fontWeightMedium" fontSize="h4.fontSize">
-          The Problem
+        <Box
+          mx={3}
+          px={2}
+          textAlign="center"
+          fontWeight="fontWeightBold"
+          fontSize="h5.fontSize"
+        >
+          “Path-Safe” , levels of awareness and preparation awareness,
+          implementation, operations
         </Box>
-        <Box mb={2} fontSize="p.fontSize">
-          Workers are unsure about the safety of their workspaces.
+        <Box mb={1} mt={2} fontWeight="fontWeightMedium" fontSize="h5.fontSize">
+          3 levels for any operation including
         </Box>
-        <Box mb={1} fontWeight="fontWeightMedium" fontSize="h4.fontSize">
-          The Solution
-        </Box>
-        <Box fontSize="p.fontSize" mb={3}>
-          KoolBlock has developed a digital Workability Index, a measure that
-          indicates if a physical worskpace is safe from pathogenic
-          contaminants.
+        <Box>
+          <List dense={true}>
+            <ListItem>
+              <Box fontWeight="bold">- Staff Health Procedures</Box>
+            </ListItem>
+            <ListItem>
+              <Box fontWeight="bold">- Air Cleanliness</Box>
+            </ListItem>
+            <ListItem>
+              <Box fontWeight="bold">- Surface Cleanliness</Box>
+            </ListItem>
+            <ListItem>
+              <Box fontWeight="bold">- Procedural Safety</Box>
+            </ListItem>
+            <ListItem>
+              <Box fontWeight="bold">- Testing for Viruses</Box>
+            </ListItem>
+          </List>
         </Box>
       </Grid>
     </Grid>
