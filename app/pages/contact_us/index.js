@@ -9,7 +9,7 @@ import {
   Typography,
   TextField,
 } from "@material-ui/core";
-
+import { createRef, useState } from "react";
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "5vh",
@@ -44,12 +44,37 @@ const useStyles = makeStyles((theme) => ({
 
 function ContactUs(props) {
   const classes = useStyles();
-  const contactUs = (event) => {
-    event.preventDefault(); // don't redirect the page
-    // where we'll add our form logic
-  };
-  const bull = <span className={classes.bullet}>•</span>;
 
+  const [sending, setSending] = useState(false);
+
+  const emailEl = createRef();
+  const nameEl = createRef();
+  const messageEl = createRef();
+
+  const postMail = async () => {
+    const email = emailEl.current.value;
+    const message = messageEl.current.value;
+    const name = nameEl.current.value;
+
+    setSending(true);
+    try {
+      fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: message,
+          name: name,
+          email: email,
+        }),
+      });
+    } catch (e) {}
+    setSending(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    postMail();
+  };
   return (
     <>
       <SubHeader title="Contact Us" />
@@ -62,7 +87,7 @@ function ContactUs(props) {
       >
         <Block>
           <Box display="flex" justifyContent="center">
-            <form>
+            <form method="post" onSubmit={handleSubmit}>
               <Card className={classes.root}>
                 <CardContent>
                   <Typography
@@ -76,6 +101,7 @@ function ContactUs(props) {
                     className={classes.text_field_single}
                     id="name"
                     label="Your name"
+                    inputRef={nameEl}
                   />
                   <Typography
                     className={classes.title}
@@ -88,6 +114,7 @@ function ContactUs(props) {
                     className={classes.text_field_single}
                     id="email"
                     label="Your E-mail"
+                    inputRef={emailEl}
                   />
 
                   <Typography
@@ -105,10 +132,17 @@ function ContactUs(props) {
                     rows={8}
                     defaultValue=""
                     variant="outlined"
+                    inputRef={messageEl}
                   />
                 </CardContent>
                 <Box display="flex" justifyContent="center" mb={2}>
-                  <Button size="large" variant="contained" color="secondary">
+                  <Button
+                    size="large"
+                    variant="contained"
+                    color="secondary"
+                    type="submit"
+                    disabled={sending}
+                  >
                     Send
                   </Button>
                 </Box>
