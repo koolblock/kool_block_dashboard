@@ -8,8 +8,15 @@ import {
   Button,
   Typography,
   TextField,
+  Snackbar
 } from "@material-ui/core";
 import { createRef, useState } from "react";
+import MuiAlert from "@material-ui/lab/Alert";
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "5vh",
@@ -46,6 +53,7 @@ function ContactUs(props) {
   const classes = useStyles();
 
   const [sending, setSending] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const emailEl = createRef();
   const nameEl = createRef();
@@ -68,8 +76,18 @@ function ContactUs(props) {
         }),
       });
     } catch (e) {}
+    setOpen(true)
     setSending(false);
   };
+
+   const handleClose = (event, reason) => {
+     if (reason === "clickaway") {
+       return;
+     }
+
+     setOpen(false);
+   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -143,13 +161,18 @@ function ContactUs(props) {
                     type="submit"
                     disabled={sending}
                   >
-                    Send
+                    {sending ? "SENDING EMAIL" : "SENT"}
                   </Button>
                 </Box>
               </Card>
             </form>
           </Box>
         </Block>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success">
+            Email sent, thank you for contacting us.
+          </Alert>
+        </Snackbar>
       </Box>
     </>
   );
