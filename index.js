@@ -23,6 +23,9 @@ const UserSchema = require("./list/User");
 
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
+  cookie: {
+    secure: true,
+  },
   cookieSecret: process.env.COOKIE_SECRET,
 });
 
@@ -69,4 +72,7 @@ module.exports = {
     }),
     new NextApp({ dir: "app" }),
   ],
+  configureExpress: (app) => {
+    app.set("trust proxy", 1);
+  },
 };
