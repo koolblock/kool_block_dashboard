@@ -33,7 +33,8 @@
     "next": "^10.0.7",
     "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
-    "react-reveal": "^1.2.2"
+    "react-reveal": "^1.2.2",
+    "react-wavify": "^1.5.2"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

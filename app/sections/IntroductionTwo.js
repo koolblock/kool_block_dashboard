@@ -49,12 +49,19 @@ export default function IntroductionTwo() {
               <Image
                 src={"/workspace.jpeg"}
                 alt="logo"
-                width={300}
-                height={300}
+                width={500}
+                height={500}
                 objectFit="contain"
               />
             </Fade>
-            <Box mt={2}>Give employees confidence in their workspaces</Box>
+            <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
+              Clean Air
+            </Box>
+            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+              Many pathogens are transmitted through air <br />
+              The Path-Safe program can remove them with HEPA filters and UV-C
+              light disinfection
+            </Box>
           </Box>
         </Grid>
         <Grid item xs={12} md={4}>
@@ -69,13 +76,19 @@ export default function IntroductionTwo() {
               <Image
                 src={"/test-machine.jpeg"}
                 alt="logo"
-                width={300}
-                height={300}
+                width={500}
+                height={500}
                 objectFit="contain"
               />
             </Fade>
-            <Box mt={2}>
-              Test results, and include this preparation in our EHS plans
+            <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
+              Naturopathic
+            </Box>
+            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+              Path-Safe uses powerful natural disinfectants <br />
+              There are no harmful toxic chemicals involved <br />
+              Only use natural inputs, water and salt and electricity <br />
+              Fully biodegradeable <br />
             </Box>
           </Box>
         </Grid>
@@ -91,13 +104,44 @@ export default function IntroductionTwo() {
               <Image
                 src={"/procedures.jpeg"}
                 alt="logo"
-                width={300}
-                height={300}
+                width={500}
+                height={500}
                 objectFit="contain"
               />
             </Fade>
-            <Box mt={2}>
-              Understand how to use safe disinfectant procedures and materials
+            <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
+              Effective Testing
+            </Box>
+            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+              Workspaces are fully tested to “see” pathogenic loads <br />
+              Dirty areas can bee seen and identified <br />
+            </Box>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box
+            p={2}
+            display="flex"
+            justifyContent="center"
+            display="flex"
+            flexDirection="column"
+          >
+            <Fade bottom>
+              <Image
+                src={"/procedures.jpeg"}
+                alt="logo"
+                width={500}
+                height={500}
+                objectFit="contain"
+              />
+            </Fade>
+            <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
+              Disinfection Versus Cleaning
+            </Box>
+            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+              Cleaning removes dirt and germs from surfaces <br />
+              It doesn’t necessarily kill the germs <br />
+              Disinfection kills germs (bacteria and viruses) on surfaces <br />
             </Box>
           </Box>
         </Grid>
