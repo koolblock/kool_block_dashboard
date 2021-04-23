@@ -73,7 +73,7 @@ export default function Introduction() {
             px={2}
             textAlign="center"
             fontWeight="fontWeightBold"
-            fontSize="h5.fontSize"
+            fontSize="h4.fontSize"
           >
             <span style={{ fontSize: "2.2rem" }}>“Path-Safe”</span> , Natural
             Disinfection Program
@@ -86,8 +86,8 @@ export default function Introduction() {
           <Box
             mb={1}
             mt={1}
-            fontWeight="fontWeightMedium"
-            fontSize="h6.fontSize"
+            fontWeight="fontWeightBold"
+            fontSize="h5.fontSize"
             textAlign="center"
           >
             Enterprise Solutions available with various EHS software
@@ -95,7 +95,7 @@ export default function Introduction() {
           <Box
             mb={1}
             mt={2}
-            fontWeight="fontWeightMedium"
+            fontWeight="fontWeightBold"
             fontSize="h5.fontSize"
             textAlign="center"
           >
