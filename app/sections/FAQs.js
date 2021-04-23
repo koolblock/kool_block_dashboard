@@ -5,7 +5,7 @@ import {
   ListItemIcon,
   ListItemText,
   Collapse,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import ExpandLess from "@material-ui/icons/ExpandLess";
@@ -21,46 +21,45 @@ const useStyles = makeStyles((theme) => ({
   image: {
     borderRadius: 2,
   },
-  boxList:{
-      maxWidth: '95vw',
-      marginBottom: 15
+  boxList: {
+    maxWidth: "95vw",
+    marginBottom: 15,
   },
-  title:{
-      fontWeight: 'bold',
-      color: theme.palette.green,
-      marginBottom: 15
-  }
+  title: {
+    fontWeight: "bold",
+    color: theme.palette.green,
+    marginBottom: 15,
+  },
 }));
 
+const FAQ = ({ question, answers = [] }) => {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
 
-const FAQ = ({question, answers = []} ) =>{
-     const classes = useStyles();
-     const [open, setOpen] = React.useState(false);
-
-     const handleClick = () => {
-       setOpen(!open);
-     };
-    return (
-      <Box className={classes.boxList}>
-        <ListItem button onClick={handleClick}>
-          <ListItemIcon>
-            <PlayArrowIcon />
-          </ListItemIcon>
-          <ListItemText primary={question} />
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            {answers.map((answer) => (
-              <ListItem>
-                <ListItemText primary={answer} key={answer}/>
-              </ListItem>
-            ))}
-          </List>
-        </Collapse>
-      </Box>
-    );
-}
+  const handleClick = () => {
+    setOpen(!open);
+  };
+  return (
+    <Box className={classes.boxList} id="faq">
+      <ListItem button onClick={handleClick}>
+        <ListItemIcon>
+          <PlayArrowIcon />
+        </ListItemIcon>
+        <ListItemText primary={question} />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          {answers.map((answer, index) => (
+            <ListItem key={index}>
+              <ListItemText primary={answer} key={answer} />
+            </ListItem>
+          ))}
+        </List>
+      </Collapse>
+    </Box>
+  );
+};
 
 export default function FAQs() {
   const classes = useStyles();

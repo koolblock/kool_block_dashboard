@@ -48,7 +48,7 @@ export default function PostsList() {
   const { loading, error, data } = useQuery(ALL_BASIC_POST_INFO);
   const list_posts = data?.allPosts ?? [];
   return (
-    <Box className={classes.container}>
+    <Box className={classes.container} id="blogs">
       <Box
         fontWeight="fontWeightBold"
         textAlign="center"

@@ -8,9 +8,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function Footer() {
-      const classes = useStyles();
+  const classes = useStyles();
 
   return (
     <footer className={`footer-distributed ${classes.root}`}>
@@ -24,21 +23,37 @@ export default function Footer() {
             Home
           </Link>
         </p>
+        <p className="footer-links">
+          <Link href="/#blogs" className="link-1">
+            Blogs
+          </Link>
+        </p>
 
-        <p className="footer-company-name">KoolBlock © 2021</p>
+        <p className="footer-links">
+          <Link href="/#faq" className="link-1">
+            Frequently Asked Questions
+          </Link>
+        </p>
+
+        <p className="footer-links">
+          <Link href="/request_demo" className="link-1">
+            Request a Demo
+          </Link>
+        </p>
       </div>
 
       <div className="footer-center">
         <div>
           <i className="fa fa-map-marker"></i>
           <p>
-            <span>777 Lucky Seven, Casino</span> Lucky City, Lucky Province
+            <span>#211-439 West Broadway Street</span> Vancouver, British
+            Columbia
           </p>
         </div>
 
         <div>
           <i className="fa fa-phone"></i>
-          <p>+1.777.777.7777</p>
+          <p>+1.604.889.2662</p>
         </div>
 
         <div>
@@ -52,8 +67,10 @@ export default function Footer() {
       <div className="footer-right">
         <p className="footer-company-about">
           <span>About the company</span>
-          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-          euismod convallis velit, eu auctor lacus vehicula sit amet.
+          Koolblock Inc. is developing a standard for safety in workspaces. The
+          company has tested its procedures in real life settings. Path-Safe has
+          been developed with the assistance of the Canadian Federal government
+          assistance.
         </p>
 
         <div className="footer-icons">
@@ -67,6 +84,7 @@ export default function Footer() {
             <i className="fa fa-linkedin"></i>
           </a>
         </div>
+        <p className="footer-company-name">KoolBlock © 2021</p>
       </div>
     </footer>
   );

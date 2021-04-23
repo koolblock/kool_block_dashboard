@@ -8,7 +8,7 @@ import {
   Button,
   Typography,
   TextField,
-  Snackbar
+  Snackbar,
 } from "@material-ui/core";
 import { createRef, useState } from "react";
 import MuiAlert from "@material-ui/lab/Alert";
@@ -76,18 +76,17 @@ function ContactUs(props) {
         }),
       });
     } catch (e) {}
-    setOpen(true)
+    setOpen(true);
     setSending(false);
   };
 
-   const handleClose = (event, reason) => {
-     if (reason === "clickaway") {
-       return;
-     }
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
 
-     setOpen(false);
-   };
-
+    setOpen(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -161,7 +160,7 @@ function ContactUs(props) {
                     type="submit"
                     disabled={sending}
                   >
-                    {sending ? "SENDING EMAIL" : "SENT"}
+                    {sending ? "SENDING EMAIL" : "SEND"}
                   </Button>
                 </Box>
               </Card>

@@ -16,8 +16,25 @@ import Image from "next/image";
 
 const headersData = [
   {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Blogs",
+    href: "#blogs",
+  },
+  {
+    label: "FAQ",
+    href: "#faq",
+  },
+  {
     label: "Contact Us",
     href: "/contact_us",
+  },
+  {
+    label: "Request a Demo",
+    href: "/request_demo",
+    customClassName: true,
   },
 ];
 
@@ -44,6 +61,22 @@ const useStyles = makeStyles((theme) => ({
     size: theme.spacing(3),
     marginLeft: theme.spacing(5),
   },
+  a_tag: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 700,
+    size: theme.spacing(3),
+    marginLeft: theme.spacing(5),
+    textDecoration: "none",
+    color: "white",
+  },
+  request_demo: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 700,
+    size: theme.spacing(3),
+    marginLeft: theme.spacing(5),
+    padding: theme.spacing(2),
+    backgroundColor: theme.palette.green,
+  },
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
@@ -55,7 +88,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  const { header, menuButton, toolbar, drawerContainer } = useStyles();
+  const {
+    header,
+    menuButton,
+    toolbar,
+    drawerContainer,
+    request_demo,
+    a_tag,
+  } = useStyles();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -138,13 +178,13 @@ export default function Header() {
   );
 
   const getMenuButtons = () => {
-    return headersData.map(({ label, href }) => (
+    return headersData.map(({ label, href, customClassName = false }) => (
       <Link
         href={href}
         key={label}
         {...{
           color: "inherit",
-          className: menuButton,
+          className: customClassName ? request_demo : menuButton,
         }}
       >
         {label}
