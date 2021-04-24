@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Button, makeStyles } from "@material-ui/core";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   quote: {
@@ -15,11 +16,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Information() {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <Box p={2} mx={5}>
       <Box display="flex" justifyContent="center" flexWrap="wrap" mt={2}>
-        <Button variant="contained" className={classes.quote}>
+        <Button
+          variant="contained"
+          className={classes.quote}
+          onClick={() => router.push("/request_demo")}
+        >
           Contact us now: <br /> Get a quick “Path-Safe” assessment of your
           facility and operations..
         </Button>

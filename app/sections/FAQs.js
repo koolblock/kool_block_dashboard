@@ -52,7 +52,7 @@ const FAQ = ({ question, answers = [] }) => {
         <List component="div" disablePadding>
           {answers.map((answer, index) => (
             <ListItem key={index}>
-              <ListItemText primary={answer} key={answer} />
+              <ListItemText primary={answer} />
             </ListItem>
           ))}
         </List>

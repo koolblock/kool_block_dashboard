@@ -13,15 +13,16 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 800,
     width: "100%",
     marginBottom: 30,
+    padding: theme.spacing(2),
   },
-  title:{
-    fontWeight: 'bold',
-    color: theme.palette.green
-  }
+  title: {
+    fontWeight: "bold",
+    color: theme.palette.green,
+  },
 }));
 
-export default function Post({post}) {
-    const classes = useStyles();
+export default function Post({ post }) {
+  const classes = useStyles();
   return (
     <Box className={classes.root}>
       <Card className={classes.card}>

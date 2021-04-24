@@ -1,8 +1,7 @@
 import { Box, Button, Grid } from "@material-ui/core";
-import { makeStyles, List, ListItem, Chip } from "@material-ui/core";
+import { makeStyles, Chip } from "@material-ui/core";
+import { useRouter } from "next/router";
 import Image from "next/image";
-import FaceIcon from "@material-ui/icons/Face";
-import Wave from "react-wavify";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -36,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Introduction() {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <>
@@ -48,9 +48,8 @@ export default function Introduction() {
         <Grid item xs={12} md={6}>
           <Box display="flex" justifyContent="center" width={1}>
             <Image
-              id="image_water"
               className={classes.image}
-              src={"/water_video.gif"}
+              src="/water_video.gif"
               alt="logo"
               layout="fill"
               objectFit="cover"
@@ -79,7 +78,11 @@ export default function Introduction() {
             Disinfection Program
           </Box>
           <Box display="flex" justifyContent="center" flexWrap="wrap" mt={2}>
-            <Button variant="contained" className={classes.quote}>
+            <Button
+              variant="contained"
+              className={classes.quote}
+              onClick={() => router.push("/request_demo")}
+            >
               Get a quote today on a Path-Safe Program
             </Button>
           </Box>

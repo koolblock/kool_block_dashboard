@@ -57,7 +57,7 @@ export default function IntroductionTwo() {
             <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
               Clean Air
             </Box>
-            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+            <Box fontWeight="fontWeightMedium" fontSize="h6.fontSize">
               Many pathogens are transmitted through air <br />
               The Path-Safe program can remove them with HEPA filters and UV-C
               light disinfection
@@ -84,7 +84,7 @@ export default function IntroductionTwo() {
             <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
               Naturopathic
             </Box>
-            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+            <Box fontWeight="fontWeightMedium" fontSize="h6.fontSize">
               Path-Safe uses powerful natural disinfectants <br />
               There are no harmful toxic chemicals involved <br />
               Only use natural inputs, water and salt and electricity <br />
@@ -112,7 +112,7 @@ export default function IntroductionTwo() {
             <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
               Effective Testing
             </Box>
-            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+            <Box fontWeight="fontWeightMedium" fontSize="h6.fontSize">
               Workspaces are fully tested to “see” pathogenic loads <br />
               Dirty areas can bee seen and identified <br />
             </Box>
@@ -138,7 +138,7 @@ export default function IntroductionTwo() {
             <Box my={2} fontWeight="fontWeightBold" fontSize="h5.fontSize">
               Disinfection Versus Cleaning
             </Box>
-            <Box ontWeight="fontWeightMedium" fontSize="h6.fontSize">
+            <Box fontWeight="fontWeightMedium" fontSize="h6.fontSize">
               Cleaning removes dirt and germs from surfaces <br />
               It doesn’t necessarily kill the germs <br />
               Disinfection kills germs (bacteria and viruses) on surfaces <br />

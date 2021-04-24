@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "70vh",
     fontFamily: "Roboto",
     boxSizing: "border-box",
-    margin: '0 auto'
+    margin: "0 auto",
+    position: "relative",
   },
 }));
 
