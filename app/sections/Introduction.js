@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     margin: 15,
+    background: theme.palette.black_koolblock,
   },
   image: {
     borderRadius: 2,
