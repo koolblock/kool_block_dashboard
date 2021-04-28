@@ -13,7 +13,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Block({ children, background = false }) {
+export default function Block({
+  children,
+  background = false,
+  backgroundBlack = false,
+}) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -33,6 +37,7 @@ export default function Block({ children, background = false }) {
       style={{
         borderBottom: `25px solid ${background_color}`,
         borderRight: `35px solid ${background_color}`,
+        background: backgroundBlack ? "#1D1D1D" : "none",
       }}
     >
       {children}

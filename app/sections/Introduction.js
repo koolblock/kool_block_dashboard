@@ -7,12 +7,13 @@ const useStyles = makeStyles((theme) => ({
   container: {
     width: "100%",
     height: "100%",
-    margin: 15,
-    background: theme.palette.black_koolblock,
   },
   image: {
     borderRadius: 2,
     width: "100%",
+    position: "absolute",
+    top: 0,
+    height: "100%",
   },
   quote: {
     background: theme.palette.green,
@@ -47,15 +48,7 @@ export default function Introduction() {
         className={classes.container}
       >
         <Grid item xs={12} md={6}>
-          <Box display="flex" justifyContent="center" width={1}>
-            <Image
-              className={classes.image}
-              src="/water_video.gif"
-              alt="logo"
-              layout="fill"
-              objectFit="cover"
-            />
-          </Box>
+          <img src="/water_video.gif" alt="logo" className={classes.image} />
         </Grid>
         <Grid item xs={12} md={6} className={classes.right}>
           <Box

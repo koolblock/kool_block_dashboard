@@ -16,7 +16,7 @@ function HomePage(props) {
 
   return (
     <Box className={classes.root} display="flex" flexDirection="column">
-      <Block background="green">
+      <Block background="green" backgroundBlack={true}>
         <Introduction />
       </Block>
       <Block background="black">

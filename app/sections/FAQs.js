@@ -76,42 +76,70 @@ export default function FAQs() {
       </Typography>
       <List>
         <FAQ
-          question="Why worry about Pathogens in a Post COVID World?"
+          question="May I get a quote on a disinfection process , for Workforce Reintegration at my workspace?"
           answers={[
-            "Pathogenic safety is now with us for good.   With a significant portion of our population , and the works population unvaccinated,   variants of COVID and new viruses will constantly be with us.",
+            "Yes a Koolblock representative will be happy to give you a free risk assessment and can quote you an estimate of what you need to do to make your workspace pathogenically safe and attractive to workers. Contact us at info@koolblock.com  or 1 604 889 2662 .",
           ]}
         />
         <FAQ
-          question="Water and Salt and Electricity Can help?"
+          question="Why worry about disinfecting in a post COVID world?"
           answers={[
-            "The simplest elements in nature can be combined to make the most effective pathogenic disinfectant.",
-            "One that is 60X’s more effective than bleach.  And one that is naturopathic and safe.  HOCL also known as oxidized water is the most effective disinfectant available, and it is safe for use with food and health applications, such as dental instrument cleaning.",
+            "After the recent world pandemic, pathogenic safety is now part of our everyday lives and workspaces.  It is something new that we need to add to our workplace cleaning and safety routine.",
+            "Cleaning removes dirt and germs, disinfecting kills pathogens (bacteria and viruses).  The Path-Safe process allows you to use naturopathic safe disinfection materials, and allows you to “see” how effective you are through testing. ",
+            "Inquire today at info@koolblock.com for more details. ",
           ]}
         />
         <FAQ
-          question="What is the Best Disinfectant Solution?"
+          question="Are naturopathic disinfectants effective versus strong chemical mixtures?"
           answers={[
-            "Everyone is aware of the problems associated with COVID 19 and spread of the virus through HVAC or ventilation systems on large cruise ships.",
-            "Today there are solutions available that disinfect air as it passes through ventilation systems.  First there are solutions that involve the use of disinfecting wavelengths of ultra-violet lights.  And second there is the use of  ",
+            "Yes, you can make a natural disinfectant, 50X’s more effective than bleach, from just distilled water, kosher salt and electricity.  Koolblock can help you source or make your own naturopathic disinfectant.",
+            "This can be for an individual location, or it can be manufactured and supplied on an enterprise basis.",
+            " Inquire at info@koolblock.com for more detail. ",
           ]}
         />
         <FAQ
-          question="Can we create Health Safe Facilities ?:  HVAC and Pathogen Safety"
+          question="What is the secret to the Path-Safe disinfection process?"
           answers={[
-            "Koolblock staff can work with your OSHA team to integrate pathogenic safety into your Occupational Health and Safety plans, Environment Plans and Sustainability plans.",
+            "The secret involves using the Path-Safe pathogenic safety standard procedures plus ongoing testing for pathogens, and disinfection using safe procedures and materials. ",
+            "Ask for a free risk assessment today, contact info@koolblock.com. ",
           ]}
         />
         <FAQ
-          question="Automation and Robotics Have a role in in Health Safety?"
+          question="How does Path-Safe relate to our Occupational Health and Safety Plan?"
           answers={[
-            "There are efficient automated options that allow for broad and effective coverage of industrial facilities.",
+            "Pathogenic safety is a novel and integral part of your overall OHS approach.  Contact us today and advise us which enterprise EHS (environment health and safety) software your enterprise uses.",
+            "Koolblock will show you how to integrate Path-Safe into your EHS software and occupational health and safety environment.",
           ]}
         />
         <FAQ
-          question="A Path-Safe Sustainability Standard"
+          question="What Can I do about staff that are reluctant to return to our workspace?"
           answers={[
-            "Koolblock researchers have been able to test pathogenic safety procedures in children’s foundations, and have now developed a beta standard for institutions to apply, improve and be tested against.",
-            "Testing against a known and trusted standard is the only way to manage and improve pathogenic safety.",
+            "The quick answer is to give them easy to understand data about bacteria and viruses in the workspace air and surfaces. A Koolblock representative will be pleased to answer questions about pathogenic health and safety and how risk is tracked and reduced overtime.",
+            "Find out more at info@koolblock.com. ",
+          ]}
+        />
+        <FAQ
+          question="What is “Pathogenic Sustainability”?"
+          answers={[
+            "It is the use of an auditable best practice tracking standard, Path-Safe, combined with bacteria and virus testing,  to measure a known level of safety, and to be ready should an outbreak occur. ",
+          ]}
+        />
+        <FAQ
+          question="What Does the Path–Safe Standard cover?"
+          answers={[
+            "- Testing for pathogens",
+            "- Use of the Standard, facilities and transportation and planning for emergencies;",
+            "- Air quality management, airflow and HVAC, air particle capture and disinfection;",
+            "- Sanitizing and disinfecting surfaces, using naturopathic solutions;",
+            "- Integration into EHS plans and software (environment health and safety);",
+            "- Education and Communication with staff and customers;",
+            "- Automation and digitization of processes into Path-Safe EHS software.",
+          ]}
+        />
+        <FAQ
+          question="How can I get more information?"
+          answers={[
+            "You guessed it, contact us at info@koolblock.com and ask us what you need to know.",
           ]}
         />
       </List>

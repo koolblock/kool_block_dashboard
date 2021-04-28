@@ -67,7 +67,7 @@ export default function Footer() {
       <div className="footer-right">
         <p className="footer-company-about">
           <span>About the company</span>
-          Koolblock Inc. is developing a standard for safety in workspaces. The
+          Koolblock Inc. has developed a standard for safety in workspaces. The
           company has tested its procedures in real life settings. Path-Safe has
           been developed with the assistance of the Canadian Federal government
           assistance.
